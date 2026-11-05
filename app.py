@@ -25,7 +25,7 @@ if getattr(sys, 'frozen', False):
     static_folder = os.path.join(sys._MEIPASS, 'static')
     app = Flask(__name__, template_folder=template_folder, static_folder=static_folder)
 else:
-    app = Flask(__name__, static_folder='static')
+    app = Flask(__name__, static_folder='static', template_folder='.')
 
 current_config = {'root_paths': [], 'theme_mode': 0}
 scan_status = {'is_scanning': False, 'total_files': 0, 'done': False}
